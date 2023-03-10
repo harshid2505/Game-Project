@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var pgBar: UIProgressView!
+    @IBOutlet weak var playgameLb: UILabel!
     var time = Timer()
     
     override func viewDidLoad() {
@@ -19,6 +20,9 @@ class ViewController: UIViewController {
         pgBar.progress = 0.0
         //progress()
         playButton.layer.cornerRadius = 10
+        pgBar.layer.isHidden = true
+        playgameLb.layer.isHidden = true
+        
         
     }
     
@@ -43,6 +47,8 @@ class ViewController: UIViewController {
     @IBAction func playButtonAction(_ sender: UIButton) {
         //pgBar.progress = 0.0
         progress()
+        pgBar.layer.isHidden = false
+        playgameLb.layer.isHidden = false
     }
     
 }
