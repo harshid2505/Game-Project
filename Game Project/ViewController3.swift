@@ -26,15 +26,17 @@ class ViewController3: UIViewController {
     //var highscore = UserDefaults.standard.integer(forKey: "highscore")
     var highscore = 0
     
+    var bbutton2 = Int.random(in: -100...100)
+    var bbutton3 = Int.random(in: -100...100)
     
-    
+  
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var buttton2: UIButton!
+    @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var lbOfOpretor: UILabel!
-    @IBOutlet weak var lb2: UILabel!
-    @IBOutlet weak var lb1: UILabel!
+    @IBOutlet weak var lable2: UILabel!
+    @IBOutlet weak var lable1: UILabel!
     @IBOutlet weak var pgbar: UIProgressView!
     
     override func viewDidLoad() {
@@ -47,10 +49,12 @@ class ViewController3: UIViewController {
         buttonInText()
         scoreLbSet()
         scoreUpdate()
-       
+        
         score = point
         //highscore = score
         self.scoreUpdate()
+        
+        
     }
     
     
@@ -64,12 +68,12 @@ class ViewController3: UIViewController {
                 self.pgbar.progress = 1.0
                 self.time.invalidate()
                 self.scoreUpdate()
-                self.atert()
+                self.alert()
             }
         })
     }
     
-    func atert(){
+    func alert(){
         scoreUpdate()
         let alert = UIAlertController.init(title: "Game Over\n", message: "Score : \(score)\n High Score : \(highscore)", preferredStyle: .alert)
         
@@ -100,16 +104,17 @@ class ViewController3: UIViewController {
         scoreLabel.layer.masksToBounds = true
     }
     
+    
     func genret(){
-                var firstNumber = Int.random(in: 1...50)
-                var secondNumber = Int.random(in: 21...70)
+        var firstNumber = Int.random(in: 1...50)
+        var secondNumber = Int.random(in: 21...70)
         
         
         var array = ["+" , "-"]
         var opretor = array.randomElement()
         
-        lb1.text = "\(firstNumber)"
-        lb2.text = "\(secondNumber)"
+        lable1.text = "\(firstNumber)"
+        lable2.text = "\(secondNumber)"
         lbOfOpretor.text = opretor
         
         if lbOfOpretor.text == "+"{
@@ -126,25 +131,34 @@ class ViewController3: UIViewController {
     }
     
     
-    func buttonInText(){
+    public func buttonInText(){
         
+        var arr = [ans,bbutton2,bbutton3]
+        arr.shuffle()
+        var a = arr[0]
+        var b = arr[1]
+        var c = arr[2]
         
+        //print(arr)
+        //        var b1 = arr[0]
         //ansLb.text = "\(ans)"
         
-        button1.setTitle(String(ans), for: .normal)
+        button1.setTitle("\(arr[0])", for: .normal)
         
         
         //button2.setTitle(String(Int.random(in: -100...100)), for: .normal)
-        buttton2.setTitle(String(Int.random(in: -100...100)),for : .normal)
+        button2.setTitle("\(arr[1])", for: .normal)
         
         //button2Lb.text = "\(Int.random(in: -50...50))"
         
-        button3.setTitle(String(Int.random(in: -100...100)), for: .normal)
+        button3.setTitle("\(arr[2])", for: .normal)
         
         //button3Lb.text = "\(Int.random(in: -100...100))"
+        
+        
     }
     
-
+    
     
     func scoreUpdate(){
         if score > highscore{
@@ -156,33 +170,18 @@ class ViewController3: UIViewController {
     
     @IBAction func button1(_ sender: UIButton) {
         
-        progress()
-        self.genret()
-        buttonInText()
-        
-        if let score2 = NumberFormatter().number(from: scoreLabel.text!) {
-            var playerScore = score2.intValue
-                score = score + 1
-                scoreLabel.text = "\(score)"
-            } else {
-                
-                scoreLabel.text = "0"
-            }
-    }
-    @IBAction func button2(_ sender: UIButton) {
-        self.genret()
-        buttonInText()
-        progress()
-        atert()
-        
-    }
-    
-    @IBAction func button3(_ sender: UIButton) {
-        self.genret()
-        buttonInText()
-        progress()
-        atert()
-        
+        if let str = sender.currentTitle, let intData = Int(str), ans == intData {
+            score = score + 1
+            scoreLabel.text = "\(score)"
+            
+            progress()
+            self.genret()
+            buttonInText()
+            
+            
+        } else {
+            alert()
+        }
     }
     
 }

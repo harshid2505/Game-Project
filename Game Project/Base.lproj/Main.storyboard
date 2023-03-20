@@ -202,43 +202,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-s6-cXl">
-                                <rect key="frame" x="16" y="550" width="109" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.46274507050000002" green="0.74117654560000001" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
-                                    <color key="baseBackgroundColor" red="0.91764706370000004" green="0.91764706370000004" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="button1:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="j0w-fJ-45m"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voP-DT-fkb">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voP-DT-fkb">
                                 <rect key="frame" x="142" y="550" width="109" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.46274507050000002" green="0.74117654560000001" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <buttonConfiguration key="configuration" style="tinted">
                                     <color key="baseBackgroundColor" red="0.91764706370000004" green="0.91764706370000004" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="button2:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="BUQ-0E-ISc"/>
+                                    <action selector="button1:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="M7d-RN-vzh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0E-Kc-600">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0E-Kc-600">
                                 <rect key="frame" x="268" y="550" width="109" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.46274507050000002" green="0.74117654560000001" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <buttonConfiguration key="configuration" style="tinted">
                                     <color key="baseBackgroundColor" red="0.91764706370000004" green="0.91764706370000004" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="button3:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="yaG-OR-mK1"/>
+                                    <action selector="button1:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="gq9-KA-ekR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-Iv-DdH">
@@ -249,16 +234,28 @@
                                 <color key="textColor" red="0.2235293984" green="0.4196078479" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4y-Xn-i34">
+                                <rect key="frame" x="16" y="550" width="109" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.46274507050000002" green="0.74117654560000001" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <color key="baseBackgroundColor" red="0.91764706370000004" green="0.91764706370000004" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="button1:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="s4K-7Q-3Ey"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ioP-7d-Vzq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="MIo-s6-cXl" id="5sP-yV-V5H"/>
+                        <outlet property="button1" destination="o4y-Xn-i34" id="JCS-X0-QAC"/>
+                        <outlet property="button2" destination="voP-DT-fkb" id="Xc8-YV-TFm"/>
                         <outlet property="button3" destination="f0E-Kc-600" id="NYh-2a-1fQ"/>
-                        <outlet property="buttton2" destination="voP-DT-fkb" id="CT3-4R-CgC"/>
-                        <outlet property="lb1" destination="jGl-jV-D9N" id="Awt-cD-AfL"/>
-                        <outlet property="lb2" destination="8eG-qx-vDb" id="1j2-mw-fFk"/>
+                        <outlet property="lable1" destination="jGl-jV-D9N" id="9Mv-pm-EVc"/>
+                        <outlet property="lable2" destination="8eG-qx-vDb" id="1j2-mw-fFk"/>
                         <outlet property="lbOfOpretor" destination="DP9-t4-hy6" id="3Kv-Vd-AH2"/>
                         <outlet property="pgbar" destination="K4c-aX-8aZ" id="Rut-2P-848"/>
                         <outlet property="scoreLabel" destination="BKn-Iv-DdH" id="XPQ-f4-Tne"/>
