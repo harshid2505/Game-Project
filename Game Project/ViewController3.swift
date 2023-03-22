@@ -11,25 +11,15 @@ class ViewController3: UIViewController {
     
     var time = Timer()
     var freq = 0.0
-    
-    
-    
-    //var firstNumber = Int.random(in: 1...50)
-    //var secondNumber = Int.random(in: 21...70)
-    
-    
     var ans = 0
-    //    var a = Int.random(in: -50...50)
-    //    var b = Int.random(in: -100...100)
     var score = 0
     var point = 0
-    //var highscore = UserDefaults.standard.integer(forKey: "highscore")
-    var highscore = 0
-    
+    var highscore = UserDefaults.standard.integer(forKey: "highscore")
     var bbutton2 = Int.random(in: -100...100)
     var bbutton3 = Int.random(in: -100...100)
+
     
-  
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -41,20 +31,14 @@ class ViewController3: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         pgbar.progress = 1.0
         progress()
         genret()
         buttonInText()
         scoreLbSet()
         scoreUpdate()
-        
         score = point
-        //highscore = score
         self.scoreUpdate()
-        
-        
     }
     
     
@@ -80,6 +64,8 @@ class ViewController3: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Home", style: .default, handler: { _ in
             self.navigation()
+            //self.scoreUpdate()
+            
         }))
         alert.addAction(UIAlertAction(title: "Restart", style: .default, handler: { _ in
             self.progress()
@@ -88,7 +74,6 @@ class ViewController3: UIViewController {
             self.score = 0
             self.scoreLabel.text = "0"
             self.point = 0
-            //self.highscore = 0
             self.scoreUpdate()
         }))
         present(alert, animated: true)
@@ -104,81 +89,44 @@ class ViewController3: UIViewController {
         scoreLabel.layer.masksToBounds = true
     }
     
-    
     func genret(){
         var firstNumber = Int.random(in: 1...50)
         var secondNumber = Int.random(in: 21...70)
-        
-        
         var array = ["+" , "-"]
         var opretor = array.randomElement()
-        
         lable1.text = "\(firstNumber)"
         lable2.text = "\(secondNumber)"
         lbOfOpretor.text = opretor
         
         if lbOfOpretor.text == "+"{
             ans = firstNumber + secondNumber
-            
-        }
-        
-        else {
+        } else {
             ans = firstNumber - secondNumber
         }
-        
-        
-        //ansLb.text = "\(ans)"
     }
     
-    
-    public func buttonInText(){
-        
+    public func buttonInText() {
         var arr = [ans,bbutton2,bbutton3]
         arr.shuffle()
-        var a = arr[0]
-        var b = arr[1]
-        var c = arr[2]
-        
-        //print(arr)
-        //        var b1 = arr[0]
-        //ansLb.text = "\(ans)"
-        
         button1.setTitle("\(arr[0])", for: .normal)
-        
-        
-        //button2.setTitle(String(Int.random(in: -100...100)), for: .normal)
         button2.setTitle("\(arr[1])", for: .normal)
-        
-        //button2Lb.text = "\(Int.random(in: -50...50))"
-        
         button3.setTitle("\(arr[2])", for: .normal)
-        
-        //button3Lb.text = "\(Int.random(in: -100...100))"
-        
-        
     }
-    
-    
     
     func scoreUpdate(){
         if score > highscore{
             highscore = score
-            //UserDefaults.standard.set(highscore, forKey: "hidhscore")
+            //UserDefaults.standard.set(score, forKey: "highscore")
         }
     }
     
-    
     @IBAction func button1(_ sender: UIButton) {
-        
         if let str = sender.currentTitle, let intData = Int(str), ans == intData {
             score = score + 1
             scoreLabel.text = "\(score)"
-            
             progress()
             self.genret()
             buttonInText()
-            
-            
         } else {
             alert()
         }
