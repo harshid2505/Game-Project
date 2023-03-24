@@ -14,12 +14,15 @@ class ViewController3: UIViewController {
     var ans = 0
     var score = 0
     var point = 0
+    var life = 1
     var highscore = UserDefaults.standard.integer(forKey: "highscore")
-    var bbutton2 = Int.random(in: -100...100)
-    var bbutton3 = Int.random(in: -100...100)
+    
 
     
     
+    @IBOutlet weak var lifeline3: UIImageView!
+    @IBOutlet weak var lifeline2: UIImageView!
+    @IBOutlet weak var lifeline1: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -68,6 +71,10 @@ class ViewController3: UIViewController {
             
         }))
         alert.addAction(UIAlertAction(title: "Restart", style: .default, handler: { _ in
+            self.lifeline1.image = UIImage(systemName: "star.fill")
+            self.lifeline2.image = UIImage(systemName: "star.fill")
+            self.lifeline3.image = UIImage(systemName: "star.fill")
+            self.life = 1
             self.progress()
             self.genret()
             self.buttonInText()
@@ -105,11 +112,13 @@ class ViewController3: UIViewController {
         }
     }
     
-    public func buttonInText() {
+    func buttonInText() {
+        var bbutton2 = Int.random(in: -100...100)
+        var bbutton3 = Int.random(in: -100...100)
         var arr = [ans,bbutton2,bbutton3]
         arr.shuffle()
-        button1.setTitle("\(arr[0])", for: .normal)
-        button2.setTitle("\(arr[1])", for: .normal)
+        button1.setTitle("\(arr[1])", for: .normal)
+        button2.setTitle("\(arr[0])", for: .normal)
         button3.setTitle("\(arr[2])", for: .normal)
     }
     
@@ -127,7 +136,23 @@ class ViewController3: UIViewController {
             progress()
             self.genret()
             buttonInText()
-        } else {
+        }
+        else if life == 1{
+            lifeline1.image = UIImage(systemName: "star")
+            life += 1
+            genret()
+            progress()
+            buttonInText()
+        }
+        else if life == 2{
+            lifeline2.image = UIImage(systemName: "star")
+            life += 1
+            genret()
+            progress()
+            buttonInText()
+        }
+        else if life == 3{
+            lifeline3.image = UIImage(systemName: "star")
             alert()
         }
     }

@@ -246,6 +246,21 @@
                                     <action selector="button1:" destination="fI7-lN-Ohe" eventType="touchUpInside" id="s4K-7Q-3Ey"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Duj-Zk-2jT">
+                                <rect key="frame" x="234" y="99" width="44" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="k7q-sc-dV6">
+                                <rect key="frame" x="284" y="98.666666666666742" width="44" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-hx-7qn">
+                                <rect key="frame" x="333" y="98.666666666666686" width="44" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ioP-7d-Vzq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -257,6 +272,9 @@
                         <outlet property="lable1" destination="jGl-jV-D9N" id="9Mv-pm-EVc"/>
                         <outlet property="lable2" destination="8eG-qx-vDb" id="1j2-mw-fFk"/>
                         <outlet property="lbOfOpretor" destination="DP9-t4-hy6" id="3Kv-Vd-AH2"/>
+                        <outlet property="lifeline1" destination="Duj-Zk-2jT" id="WiK-dO-Peh"/>
+                        <outlet property="lifeline2" destination="k7q-sc-dV6" id="qgY-A2-XBh"/>
+                        <outlet property="lifeline3" destination="cLf-hx-7qn" id="xrs-oD-zNF"/>
                         <outlet property="pgbar" destination="K4c-aX-8aZ" id="Rut-2P-848"/>
                         <outlet property="scoreLabel" destination="BKn-Iv-DdH" id="XPQ-f4-Tne"/>
                     </connections>
@@ -291,6 +309,7 @@
     <resources>
         <image name="bg1" width="1200" height="1799"/>
         <image name="logo" width="512" height="512"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
